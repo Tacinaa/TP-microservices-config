@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: api-gateway
-  config:
-    import: "configserver:"
   cloud:
     gateway:
       routes:
@@ -18,7 +16,9 @@ spring:
           predicates:
             - Path=/users/**
         - id: borrowing-service
-          uri: lb://borrowings/**
+          uri: lb://borrowing-service
+          predicates:
+            - Path=/borrowings/**
 
 eureka:
   client:
