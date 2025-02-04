@@ -1,0 +1,9 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: book-service
+
+custom:
+  message: "Configuration chargée depuis le Config Server !"
